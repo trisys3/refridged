@@ -1,0 +1,188 @@
+have_library: checking for main() in -llibmysql... -------------------- yes
+
+"x86_64-w64-mingw32-gcc -o conftest.exe -Ic:/Ruby21-x64/include/ruby-2.1.0/x64-mingw32 -Ic:/Ruby21-x64/include/ruby-2.1.0/ruby/backward -Ic:/Ruby21-x64/include/ruby-2.1.0 -I. -Ic:/wamp/bin/mysql/mysql5.6.17/include -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0501 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64   -O3 -fno-omit-frame-pointer -fno-fast-math -g -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration conftest.c  -L. -Lc:/Ruby21-x64/lib -Lc:/wamp/bin/mysql/mysql5.6.17/lib -L.      -lx64-msvcrt-ruby210  -lshell32 -lws2_32 -liphlpapi -limagehlp -lshlwapi  "
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <winsock2.h>
+4: #include <windows.h>
+5: int main(int argc, char **argv)
+6: {
+7:   return 0;
+8: }
+/* end */
+
+"x86_64-w64-mingw32-gcc -o conftest.exe -Ic:/Ruby21-x64/include/ruby-2.1.0/x64-mingw32 -Ic:/Ruby21-x64/include/ruby-2.1.0/ruby/backward -Ic:/Ruby21-x64/include/ruby-2.1.0 -I. -Ic:/wamp/bin/mysql/mysql5.6.17/include -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0501 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64   -O3 -fno-omit-frame-pointer -fno-fast-math -g -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration conftest.c  -L. -Lc:/Ruby21-x64/lib -Lc:/wamp/bin/mysql/mysql5.6.17/lib -L.      -lx64-msvcrt-ruby210 -llibmysql  -lshell32 -lws2_32 -liphlpapi -limagehlp -lshlwapi  "
+conftest.c: In function 't':
+conftest.c:16:32: warning: variable 'p' set but not used [-Wunused-but-set-variable]
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <winsock2.h>
+ 4: #include <windows.h>
+ 5: 
+ 6: /*top*/
+ 7: extern int t(void);
+ 8: int main(int argc, char **argv)
+ 9: {
+10:   if (argc > 1000000) {
+11:     printf("%p", &t);
+12:   }
+13: 
+14:   return 0;
+15: }
+16: int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for mysql_ssl_set()... -------------------- yes
+
+"x86_64-w64-mingw32-gcc -o conftest.exe -Ic:/Ruby21-x64/include/ruby-2.1.0/x64-mingw32 -Ic:/Ruby21-x64/include/ruby-2.1.0/ruby/backward -Ic:/Ruby21-x64/include/ruby-2.1.0 -I. -Ic:/wamp/bin/mysql/mysql5.6.17/include -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0501 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64   -O3 -fno-omit-frame-pointer -fno-fast-math -g -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration conftest.c  -L. -Lc:/Ruby21-x64/lib -Lc:/wamp/bin/mysql/mysql5.6.17/lib -L.     -llibmysql  -lx64-msvcrt-ruby210 -llibmysql  -lshell32 -lws2_32 -liphlpapi -limagehlp -lshlwapi  "
+conftest.c: In function 't':
+conftest.c:16:57: error: 'mysql_ssl_set' undeclared (first use in this function)
+conftest.c:16:57: note: each undeclared identifier is reported only once for each function it appears in
+conftest.c:16:32: warning: variable 'p' set but not used [-Wunused-but-set-variable]
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <winsock2.h>
+ 4: #include <windows.h>
+ 5: 
+ 6: /*top*/
+ 7: extern int t(void);
+ 8: int main(int argc, char **argv)
+ 9: {
+10:   if (argc > 1000000) {
+11:     printf("%p", &t);
+12:   }
+13: 
+14:   return 0;
+15: }
+16: int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_ssl_set; return 0; }
+/* end */
+
+"x86_64-w64-mingw32-gcc -o conftest.exe -Ic:/Ruby21-x64/include/ruby-2.1.0/x64-mingw32 -Ic:/Ruby21-x64/include/ruby-2.1.0/ruby/backward -Ic:/Ruby21-x64/include/ruby-2.1.0 -I. -Ic:/wamp/bin/mysql/mysql5.6.17/include -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0501 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64   -O3 -fno-omit-frame-pointer -fno-fast-math -g -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration conftest.c  -L. -Lc:/Ruby21-x64/lib -Lc:/wamp/bin/mysql/mysql5.6.17/lib -L.     -llibmysql  -lx64-msvcrt-ruby210 -llibmysql  -lshell32 -lws2_32 -liphlpapi -limagehlp -lshlwapi  "
+conftest.c: In function 't':
+conftest.c:16:1: warning: implicit declaration of function 'mysql_ssl_set' [-Wimplicit-function-declaration]
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <winsock2.h>
+ 4: #include <windows.h>
+ 5: 
+ 6: /*top*/
+ 7: extern int t(void);
+ 8: int main(int argc, char **argv)
+ 9: {
+10:   if (argc > 1000000) {
+11:     printf("%p", &t);
+12:   }
+13: 
+14:   return 0;
+15: }
+16: int t(void) { mysql_ssl_set(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_str_set_len()... -------------------- yes
+
+"x86_64-w64-mingw32-gcc -o conftest.exe -Ic:/Ruby21-x64/include/ruby-2.1.0/x64-mingw32 -Ic:/Ruby21-x64/include/ruby-2.1.0/ruby/backward -Ic:/Ruby21-x64/include/ruby-2.1.0 -I. -Ic:/wamp/bin/mysql/mysql5.6.17/include -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0501 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64   -O3 -fno-omit-frame-pointer -fno-fast-math -g -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration conftest.c  -L. -Lc:/Ruby21-x64/lib -Lc:/wamp/bin/mysql/mysql5.6.17/lib -L.     -llibmysql  -lx64-msvcrt-ruby210 -llibmysql  -lshell32 -lws2_32 -liphlpapi -limagehlp -lshlwapi  "
+conftest.c: In function 't':
+conftest.c:16:32: warning: variable 'p' set but not used [-Wunused-but-set-variable]
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <winsock2.h>
+ 4: #include <windows.h>
+ 5: 
+ 6: /*top*/
+ 7: extern int t(void);
+ 8: int main(int argc, char **argv)
+ 9: {
+10:   if (argc > 1000000) {
+11:     printf("%p", &t);
+12:   }
+13: 
+14:   return 0;
+15: }
+16: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_str_set_len; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_thread_start_timer()... -------------------- no
+
+"x86_64-w64-mingw32-gcc -o conftest.exe -Ic:/Ruby21-x64/include/ruby-2.1.0/x64-mingw32 -Ic:/Ruby21-x64/include/ruby-2.1.0/ruby/backward -Ic:/Ruby21-x64/include/ruby-2.1.0 -I. -Ic:/wamp/bin/mysql/mysql5.6.17/include -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0501 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64   -O3 -fno-omit-frame-pointer -fno-fast-math -g -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration conftest.c  -L. -Lc:/Ruby21-x64/lib -Lc:/wamp/bin/mysql/mysql5.6.17/lib -L.     -llibmysql  -lx64-msvcrt-ruby210 -llibmysql  -lshell32 -lws2_32 -liphlpapi -limagehlp -lshlwapi  "
+conftest.c: In function 't':
+conftest.c:16:57: error: 'rb_thread_start_timer' undeclared (first use in this function)
+conftest.c:16:57: note: each undeclared identifier is reported only once for each function it appears in
+conftest.c:16:32: warning: variable 'p' set but not used [-Wunused-but-set-variable]
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <winsock2.h>
+ 4: #include <windows.h>
+ 5: 
+ 6: /*top*/
+ 7: extern int t(void);
+ 8: int main(int argc, char **argv)
+ 9: {
+10:   if (argc > 1000000) {
+11:     printf("%p", &t);
+12:   }
+13: 
+14:   return 0;
+15: }
+16: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_thread_start_timer; return 0; }
+/* end */
+
+"x86_64-w64-mingw32-gcc -o conftest.exe -Ic:/Ruby21-x64/include/ruby-2.1.0/x64-mingw32 -Ic:/Ruby21-x64/include/ruby-2.1.0/ruby/backward -Ic:/Ruby21-x64/include/ruby-2.1.0 -I. -Ic:/wamp/bin/mysql/mysql5.6.17/include -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0501 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64   -O3 -fno-omit-frame-pointer -fno-fast-math -g -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration conftest.c  -L. -Lc:/Ruby21-x64/lib -Lc:/wamp/bin/mysql/mysql5.6.17/lib -L.     -llibmysql  -lx64-msvcrt-ruby210 -llibmysql  -lshell32 -lws2_32 -liphlpapi -limagehlp -lshlwapi  "
+conftest.c: In function 't':
+conftest.c:16:1: warning: implicit declaration of function 'rb_thread_start_timer' [-Wimplicit-function-declaration]
+C:\Users\Sean\AppData\Local\Temp\cctqQNLH.o: In function `t':
+c:\repos\refridged\.gem\2.1\ruby\2.1.0\gems\mysql-2.9.1\ext\mysql_api/conftest.c:16: undefined reference to `rb_thread_start_timer'
+collect2.exe: error: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <winsock2.h>
+ 4: #include <windows.h>
+ 5: 
+ 6: /*top*/
+ 7: extern int t(void);
+ 8: int main(int argc, char **argv)
+ 9: {
+10:   if (argc > 1000000) {
+11:     printf("%p", &t);
+12:   }
+13: 
+14:   return 0;
+15: }
+16: int t(void) { rb_thread_start_timer(); return 0; }
+/* end */
+
+--------------------
+
+have_header: checking for mysql.h... -------------------- yes
+
+"x86_64-w64-mingw32-gcc -E -Ic:/Ruby21-x64/include/ruby-2.1.0/x64-mingw32 -Ic:/Ruby21-x64/include/ruby-2.1.0/ruby/backward -Ic:/Ruby21-x64/include/ruby-2.1.0 -I. -Ic:/wamp/bin/mysql/mysql5.6.17/include -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0501 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64   -O3 -fno-omit-frame-pointer -fno-fast-math -g -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <winsock2.h>
+4: #include <windows.h>
+5: #include <mysql.h>
+/* end */
+
+--------------------
+

@@ -1,0 +1,18 @@
+c:/Ruby21-x64/bin/ruby.exe -r ./siteconf20141017-14316-1jlclxd.rb extconf.rb --platform=ruby --with-mysql-dir=c:/wamp/bin/mysql/mysql5.6.17
+checking for main() in -llibmysql... yes
+checking for mysql_ssl_set()... yes
+checking for rb_str_set_len()... yes
+checking for rb_thread_start_timer()... no
+checking for mysql.h... yes
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+generating mysql_api-x64-mingw32.def
+compiling mysql.c
+linking shared-object mysql/mysql_api.so
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 mysql_api.so ./.gem.20141017-14316-13xagh4/mysql
+installing default mysql_api libraries
